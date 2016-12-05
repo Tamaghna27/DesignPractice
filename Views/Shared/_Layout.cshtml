@@ -1,0 +1,94 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width" />
+    <title>@ViewBag.Title</title>
+    @*@Styles.Render("~/Content/css")
+        @Scripts.Render("~/bundles/modernizr")*@
+    <script src="~/Scripts/jQuery3.3.1.js"></script>
+    <script src="~/Scripts/bootstrap.min.js"></script>
+    <link href="~/Styles/bootstrap.min.css" rel="stylesheet" />
+
+    <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/v/dt/dt-1.10.12/datatables.min.css" />
+
+    <script type="text/javascript" src="https://cdn.datatables.net/v/dt/dt-1.10.12/datatables.min.js"></script>
+    <link rel="stylesheet/less" type="text/css" href="~/Styles/sideMenu.less" />
+    <script src="//cdnjs.cloudflare.com/ajax/libs/less.js/2.7.1/less.min.js"></script>
+</head>
+<body>
+    <div class="container-fluid">
+        @*Header*@
+        <div class="page-header" style="margin:5px;border-color:rgb(224, 30, 26);border-width:3px;padding:0px">
+            <div class="row">
+                <div class="=col col-sm-4">
+                    <img src="~/Images/" height="36" width="100" />
+                </div>
+                <div class="col col-sm-8">
+                    <div class="pull-right">
+                        <p style="margin-top:4px;margin-bottom:0px">Welcome [Change]</p>
+                        <p style="margin-bottom:0px"><a href="#">Sign Out <i class="fa fa-power-off" aria-hidden="true"></i></a></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        @*Body*@
+                <!-- Sidebar -->
+                <div class="col col-sm-3">
+                        <ul class="nav sidebar-nav">    
+                            <li>
+                                <a href="#"><i class="fa fa-fw fa-home"></i> Home </a>
+                            </li>
+                            <li>
+                                <a href="#"> Analysis </a>
+                            </li>
+                            <li>
+                                <a href="#"> Report </a>
+                            </li>
+                            <li>
+                                <a href="#"> Export </a>
+                            </li>
+                            <li class="dropdown">
+                                <a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-fw fa-plus"></i> Charts <span class="caret"></span></a>
+                                <ul class="dropdown-menu" role="menu">
+                                    <li class="dropdown-header">Dropdown heading</li>
+                                    <li><a href="#">Action</a></li>
+                                    <li><a href="#">Another action</a></li>
+                                </ul>
+                            </li>
+                        </ul>
+                    @*</nav>*@
+                </div>
+            @*</div>*@
+                
+                <!-- /#sidebar-wrapper -->
+
+                <div class="col col-sm-9">
+                    @RenderBody()
+                </div>
+            </div>
+        @*</div>*@
+
+        <footer class="navbar-fixed-bottom" style="text-align:center">
+            <p>Footer Content</p>
+            </footer>
+            <script>
+
+                $('.tree-toggle').click(function () {
+                    $(this).parent().children('ul.tree').toggle(200);
+                });
+            </script>
+            <script>
+                $(document).ready(function () {
+                    var overlay = $('.overlay');
+
+                    overlay.show();
+
+                    $('#wrapper').toggleClass('toggled');
+
+                });
+            </script>
+            @*@Scripts.Render("~/bundles/jquery")
+            @RenderSection("scripts", required: false)*@
+</body>
+</html>

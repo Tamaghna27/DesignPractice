@@ -1,0 +1,27 @@
+﻿@{
+    ViewBag.Title = "Index";
+}
+
+@*<h2>Page 1</h2>*@
+<div class="panel panel-default">
+    <div class="panel-body">
+        <table id="transTable">
+            <thead>
+                <tr>
+                    <th>Txn Id</th>
+                    <th>Pol Num</th>
+                    <th>Failure Reason</th>
+                    <th>Txn Date</th>
+                    <th>Txn Status</th>
+                </tr>
+            </thead>
+            <tbody></tbody>
+        </table>
+    </div>
+</div>
+
+<script>
+    $(document).ready(function () {
+        $('#transTable').DataTable();
+    });
+</script>
